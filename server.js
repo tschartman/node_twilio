@@ -12,6 +12,8 @@ config.TWILIO_AUTH_TOKEN = '07fe7810fa9bd93e7cba188a2d663d88'
 const app = express();
 
 app.post('/sms', (req, res) => {
+  console.log(req);
+
   const twiml = new MessagingResponse();
 
   twiml.message('The Robots are coming! Head for the hills!');
