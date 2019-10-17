@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.get('/sms', (req, res) => {    
     client.messages
     .create({
-       body: 'This is the ship that made the Kessel Run in fourteen parsecs?',
+       body: 'updating the text message being sent',
        from: '+12563673096',
        to: '+13096576541'
      })
