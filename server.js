@@ -3,6 +3,7 @@ const axios = require('axios')
 const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser')
+const cors = require('cors');
 var port = process.env.PORT || 8080;
 require('dotenv').config();
 
@@ -14,7 +15,7 @@ var client = require('twilio')(accountSid, authToken);
 
 // Tell express to use the body-parser middleware and to not parse extended bodies
 app.use(bodyParser.urlencoded({ extended: false }))
-
+app.use(cors());
 
 app.get('/sms', (req, res) => {    
     client.messages
